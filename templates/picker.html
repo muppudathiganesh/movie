@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pick a Genre</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        select, button {
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Movie Genre</h1>
+    <form method="POST">
+        <select name="genre" required>
+            <option value="" disabled selected>-- Select Genre --</option>
+            {% for genre in genres %}
+                <option value="{{ genre }}">{{ genre.title() }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Show Movies</button>
+    </form>
+</body>
+</html>
